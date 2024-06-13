@@ -2,16 +2,11 @@ package com.btistudy.board.domain;
 
 import java.time.LocalDateTime;
 
-public class ArticleComment {
-
+public class Ex00_1_Article {
     private Long id; // 고유번호
-    
-    private Article article; // 연관관계 매핑.
-    /* 연관 관계 없이 코드를 짤거라면
-    * private Long FK_id 이런식으로 그냥 하면 됨.
-    * private Article article는 Article과 관계를 맺고 있는 필드 라는걸 객체지향적으로 표현한거임 */
-
+    private String title; // 제목
     private String content; // 본문
+    private String hashtag; // 해시태그
 
 
     // 메타데이터
