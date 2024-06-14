@@ -8,12 +8,14 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Getter
 @ToString
+@EntityListeners(AuditingEntityListener.class)
 @Entity
 @Table(indexes = {
         @Index(columnList = "content"),
@@ -23,6 +25,7 @@ import java.util.Objects;
 public class Ex01_2_ArticleComment_엔티티로_등록 {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // 고유번호
 
     @Setter
