@@ -39,8 +39,8 @@ import java.util.Set;
  */
 @Getter
 @ToString
-@EntityListeners(AuditingEntityListener.class)
-@Entity
+//@EntityListeners(AuditingEntityListener.class)
+//@Entity
 @Table(indexes = {
         @Index(columnList = "title"),
         @Index(columnList = "hashtag"),
