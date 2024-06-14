@@ -12,7 +12,7 @@ import org.springframework.data.querydsl.binding.QuerydslBindings;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
-public interface ArticleCommentRepository extends
+public interface Ex05_2_ArticleCommentRepository_검색기능 extends
         JpaRepository<ArticleComment, Long>
         , QuerydslPredicateExecutor<ArticleComment>
         , QuerydslBinderCustomizer<QArticleComment> /* like 검색 */
@@ -25,8 +25,8 @@ public interface ArticleCommentRepository extends
         bindings.bind(root.createdAt).first(DateTimeExpression::eq);
         bindings.bind(root.createdBy).first(StringExpression::containsIgnoreCase);
     }
-    
-    /* 다 하면 
+
+    /* 다 하면
         1) 빌드 (Ctrl + F9)
         2) Hal 가서 확인해보기
             ex) http://localhost:8080/api/articles?hashtag=Yell
