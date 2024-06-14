@@ -25,6 +25,7 @@ import java.util.Objects;
 public class Ex01_2_ArticleComment_엔티티로_등록 {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // 고유번호
 
     @Setter
