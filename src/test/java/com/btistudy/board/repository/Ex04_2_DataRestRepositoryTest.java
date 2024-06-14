@@ -61,7 +61,7 @@ public class Ex04_2_DataRestRepositoryTest {
         // given
 
         // when & then
-        mockMvc.perform(get("/api/articles/1/articleComments"))
+        mockMvc.perform(get("/api/articles/1/articleComment"))
                 .andExpect(status().isOk()) // 현재 상태가 200인가(존재 하냐? 라고 물어보는거)
                 .andExpect(content().contentType(MediaType.valueOf("application/hal+json")));
     }
@@ -73,7 +73,7 @@ public class Ex04_2_DataRestRepositoryTest {
         // given
 
         // when & then
-        mockMvc.perform(get("/api/articles/1/articleComments/99"))
+        mockMvc.perform(get("/api/articles/1/articleComment/99"))
                 .andExpect(status().isOk()) // 현재 상태가 200인가(존재 하냐? 라고 물어보는거)
                 .andExpect(content().contentType(MediaType.valueOf("application/hal+json")));
     }
