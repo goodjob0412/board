@@ -15,7 +15,7 @@ import java.util.List;
      /articles/search-hashtag	GET	게시판 해시태그 검색 전용 페이지
  */
 
-@Controller
+//@Controller
 @RequestMapping("/articles")
 public class Ex06_1_ArticleController {
 
@@ -25,7 +25,7 @@ public class Ex06_1_ArticleController {
            ModelMap은 클래스(구현체)  사실 둘이 다른건 없음. Model 써도 같은 결과임  */
         
         model.addAttribute("articles", List.of());
-        return "articles/index";
+        return "Ex06_3_index";
 
     }
 }

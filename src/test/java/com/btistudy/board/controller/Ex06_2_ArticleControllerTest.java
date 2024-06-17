@@ -89,7 +89,7 @@ class Ex06_2_ArticleControllerTest {
 
 }
 
-/* 다 하면 resources > templates > articles 폴더 만들고 > index.html 파일 생성 */
+/* 다 하면 resources > templates > articles 폴더 만들고 > Ex06_3_index.html 파일 생성 */
 
 
 

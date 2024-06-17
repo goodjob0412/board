@@ -1,91 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<!-- 해설:  xmlns:th="http://www.thymeleaf.org"
+        이거 넣으면 '이제부터 이 문서는 타임리프 템플릿이다' 라는 뜻
+ -->
 
 <head>
     <meta charset="UTF-8">
     <title>게시판 페이지</title>
 </head>
 <body>
+<!--  타임리프는 templates 폴더 안에 넣어야함
+      (templates가 루트 폴더임)
+      파일은 templates 에
+      이미지, css 들은 resources > static > img, css 폴더 생성
 
-<!-- 이 파일 완성하고 컨트롤러 가서 매핑 연결하면 테스트 돌릴수 있음
-     html 코드 바꿀때마다 리컴파일 해야함(Ctrl + Shift + f9) 혹시 안되면 ctrl + s 하고 해보기
-      같이 쓰면 편한 웹스토어 앱 - liveReload (vsCode 에서 live server 같은거)
-      -->
+      구글에서 thymeleaf html 검색하고 > 아래쯤에 타임리프 공식 홈페이지 'Tutorial: Using Thymeleaf' 있음
+      그거 들어가서 '3 Using Texts' 보면 기본 템플릿코드 있음
 
-<header>header 삽입부</header>
 
-<main>
-<!--    검색 파트 -->
-    <form action="#">
-        <label for="search-type" hidden>유형</label>
-        <select id="search-type">
-            <option value="">제목</option>
-            <option value="">본문</option>
-            <option value="">id</option>
-            <option value="">닉네임</option>
-            <option value="">해시태그</option>
-        </select>
+      할일: header 와 footer 를 다른 파일로 들어내고 th 로 끌어오기
+-->
 
-        <label for="search-value" hidden>검색어</label>
-        <input type="search" placeholder="검색어를 입력하세요" name="search-value" id="search-value">
-        <button type="submit">검색</button>
-    </form>
+<!--header.html로 이동.
+    <header> 를 컴포넌트 방식으로 바꿔볼거임
 
-<!--    게시판 리스트 보여지는 부분 -->
-    <table>
-        <thead>
-        <tr>
-            <th>제목</th>
-            <th>해시태그</th>
-            <th>작성자</th>
-            <th>작성일</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1번글</td>
-            <td>#java</td>
-            <td>bitstudy</td>
-            <td>2022-12-22</td>
-        </tr>
-        <tr>
-            <td>2번글</td>
-            <td>#spring</td>
-            <td>bitstudy</td>
-            <td>2022-12-22</td>
-        </tr>
-        <tr>
-            <td>3번글</td>
-            <td>#mysql</td>
-            <td>bitstudy</td>
-            <td>2022-12-22</td>
-        </tr>
-        </tbody>
+    사용법:  <태그명 th:replace="~{가져올 컴포넌트 파일명 :: selector}"></태그명>
+    <header>header 삽입부</header>  =>
+-->
 
-    </table>
+    <header th:replace="~{header :: #header}"></header>
 
-<!--    페이지네이션 -->
-    <nav>
+
+    <main>
+        <!--    검색 파트 -->
+        <form action="#">
+            <label for="search-type" hidden>유형</label>
+            <select id="search-type">
+                <option value="">제목</option>
+                <option value="">본문</option>
+                <option value="">id</option>
+                <option value="">닉네임</option>
+                <option value="">해시태그</option>
+            </select>
+
+            <label for="search-value" hidden>검색어</label>
+            <input type="search" placeholder="검색어를 입력하세요" name="search-value" id="search-value">
+            <button type="submit">검색</button>
+        </form>
+
+        <!--    게시판 리스트 보여지는 부분 -->
         <table>
+            <thead>
+            <tr>
+                <th>제목</th>
+                <th>해시태그</th>
+                <th>작성자</th>
+                <th>작성일</th>
+            </tr>
+            </thead>
             <tbody>
             <tr>
-                <td>prev</td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td>5</td>
-                <td>next</td>
+                <td>1번글</td>
+                <td>#java</td>
+                <td>bitstudy</td>
+                <td>2022-12-22</td>
+            </tr>
+            <tr>
+                <td>2번글</td>
+                <td>#spring</td>
+                <td>bitstudy</td>
+                <td>2022-12-22</td>
+            </tr>
+            <tr>
+                <td>3번글</td>
+                <td>#mysql</td>
+                <td>bitstudy</td>
+                <td>2022-12-22</td>
             </tr>
             </tbody>
+
         </table>
-    </nav>
 
-</main>
+        <!--    페이지네이션 -->
+        <nav>
+            <table>
+                <tbody>
+                <tr>
+                    <td>prev</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>next</td>
+                </tr>
+                </tbody>
+            </table>
+        </nav>
 
-<footer>
-    <hr>
-    footer 삽입부
-</footer>
+    </main>
+
+
+
+    <footer th:replace="~{footer :: #footer}"></footer>
+    <!--<footer>-->
+    <!--    <hr>-->
+    <!--    footer 삽입부-->
+    <!--</footer>-->
+
+
 </body>
 </html>
