@@ -44,7 +44,7 @@ class Ex06_2_ArticleControllerTest {
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML)) // 뷰 파일은 html로 만들기 때문에 데이터 타입이 html 임.
                                                 // contentType 는 exact match 라서 MediaType 이 쯴짜 TEXT_HTML 일때만 OK 가 뜸
                                                 // contentTypeCompatibleWith 는 호환되는 타입까지 OK
-                .andExpect(view().name("articles/index")) // 현재 정보를 가지고 온 문서의 이름이 index 이고 articles 폴더 안에 있는거냐?
+                .andExpect(view().name("/articles/index")) // 현재 정보를 가지고 온 문서의 이름이 index 이고 articles 폴더 안에 있는거냐?
                 .andExpect(model().attributeExists("articles")); // 해당 뷰 파일(index) 에서는 게시글들의 목록들이 쫙 떠야 하는데,
                                                                     // 그 말은 서버에서 게시글들 가져왔다는 뜻임. 그러면 모델로 데이터를 밀어넣어줬다는 뜻인데 
                                                                     // 그게 있는지 없는지 검사할 수 있음
@@ -52,16 +52,16 @@ class Ex06_2_ArticleControllerTest {
     }
 
 
-    @Disabled("구현 중")
+//    @Disabled("구현 중")
     @Test
     @DisplayName("[view][GET] 게시글(상세) 페이지 - 정상호출")
     public void articleOne() throws Exception {
         mvc.perform(get("/articles/1"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
-                .andExpect(view().name("articles/detail"))
+                .andExpect(view().name("/articles/detail"))
                 .andExpect(model().attributeExists("articles"))
-                .andExpect(model().attributeExists("articlesComments")); // 상세페이지에는 댓글들도 여러개 있을수 있으니 모델에 articlesComments 도 키값으로 있을거임
+                .andExpect(model().attributeExists("articleComments")); // 상세페이지에는 댓글들도 여러개 있을수 있으니 모델에 articlesComments 도 키값으로 있을거임
     }
 
 

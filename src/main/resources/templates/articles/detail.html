@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>게시글 페이지</title>
+</head>
+
+<body>
+
+<header id="header"></header>
+
+<main id="article-main" class="container">
+    <header id="article-header">
+        <h1>첫번째 글</h1>
+    </header>
+
+    <aside>
+        <p><span id="nickname">goodjob0412</span></p>
+        <p><a id="email" href="mailto:goodjob0412@gmail.com">goodjob0412@email.com</a></p>
+        <p><time id="created-at" datetime="2022-01-01T00:00:00">2022-01-01</time></p>
+        <p><span id="hashtag" class="badge text-bg-secondary mx-1"><a class="text-reset">#java</a></span></p>
+    </aside>
+
+    <section>
+        <p>본문</p>
+        <br /><br />
+
+        <div>
+            댓글 입력 부분
+            <form>
+                <label for="comment-textbox" hidden>댓글</label>
+                <textarea class="form-control comment-textbox" id="comment-textbox" placeholder="댓글 쓰기.." rows="3" required></textarea>
+                <button type="submit">쓰기</button>
+            </form>
+
+            댓글 나오는 부분
+            <ul>
+                <li>
+                    <div>
+                        <strong>bitstudy</strong>
+                        <time><small>2022-01-01</small></time>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                            Lorem ipsum dolor sit amet
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>bitstudy</strong>
+                        <time><small>2022-01-01</small></time>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                            Lorem ipsum dolor sit amet
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!--  네비게이션 바 -->
+    <nav id="pagination" aria-label="Page navigation">
+        <a href="#">이전</a>
+        <a href="#">다음</a>
+    </nav>
+
+</main>
+
+
+<footer id="footer"></footer>
+
+
+</body>
+</html>
