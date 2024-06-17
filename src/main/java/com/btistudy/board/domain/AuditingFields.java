@@ -26,10 +26,10 @@ import java.time.LocalDateTime;
 
 @MappedSuperclass /* 부모 클래스는 테이블과 매핑하지 않고,
                     부모클래스를 상속 받는 자식 클래스에게 부모 클래스가 가지는 컬럼만 매핑 정보로 제공하고 싶을때 사용 */
-//@EntityListeners(AuditingEntityListener.class)
+@EntityListeners(AuditingEntityListener.class)
 @Getter // 각 필드에 접근 해야하니까 필요
 @ToString // 편하게 출력 하려고..
-public abstract class Ex02_3_AuditingFields {
+public abstract class AuditingFields {
 
     // 메타데이터
     @CreatedDate
