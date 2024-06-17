@@ -37,6 +37,17 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	implementation 'org.springframework.data:spring-data-rest-hal-explorer'
 
+	/*thymeleaf*/
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+//  /* security */
+//  implementation 'org.springframework.boot:spring-boot-starter-security'
+//
+//  /* thymeleaf , security 같이쓰면 애도 있어야함 */
+//  implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+//  testImplementation 'org.springframework.security:spring-security-test'
+
+
 	/* 스프링부트 3.X 대 버전 - 이거 하고 맨 아래 */
 	implementation "com.querydsl:querydsl-core"
 	implementation "com.querydsl:querydsl-collections"
