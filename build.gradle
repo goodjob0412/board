@@ -40,7 +40,7 @@ dependencies {
 	/*thymeleaf*/
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
-//  /* security */
+  /* security */
 //  implementation 'org.springframework.boot:spring-boot-starter-security'
 //
 //  /* thymeleaf , security 같이쓰면 애도 있어야함 */
