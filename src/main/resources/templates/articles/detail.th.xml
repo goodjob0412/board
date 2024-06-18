@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<!-- 참고: https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html#decoupled-template-logic -->
+
+<!-- 사용법
+    <attr sel="html에서 연결한 요소 잡기" th:필요한타입="선택자" />
+
+ -->
+
+<thlogic>
+    <attr sel="#header" th:replace="header :: #header" />
+    <attr sel="#footer" th:replace="footer :: #footer" />
+</thlogic>

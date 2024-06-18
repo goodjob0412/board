@@ -10,13 +10,13 @@ import java.util.Objects;
 
 @Getter
 @ToString(callSuper = true)
-@Entity
+//@Entity
 @Table(indexes = {
         @Index(columnList = "content"),
         @Index(columnList = "createdAt"),
         @Index(columnList = "createdBy"),
 })
-public class ArticleComment extends AuditingFields {
+public class Ex08_6_ArticleComment extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +29,7 @@ public class ArticleComment extends AuditingFields {
 /* 추가 - 유저 정보(userId), 양방향 바인딩 */
     @Setter
     @ManyToOne(optional = false)
+//    @JoinColumn(name = "userId")
     private UserAccount userAccount;
 
 
@@ -45,13 +46,13 @@ public class ArticleComment extends AuditingFields {
 //    @LastModifiedBy @Column(nullable = false, length = 100) private String modifiedBy; // 수정자
 
 
-    protected ArticleComment() {
+    protected Ex08_6_ArticleComment() {
     }
 
 
 /* 변경 */
 //    private ArticleComment(Article article, String content) {
-    private ArticleComment(Article article, UserAccount userAccount, String content) {
+    private Ex08_6_ArticleComment(Article article, UserAccount userAccount, String content) {
         this.article = article;
         this.userAccount = userAccount;
         this.content = content;
@@ -59,15 +60,15 @@ public class ArticleComment extends AuditingFields {
 
 /* 변경 */
 //    public static ArticleComment of(Article article, String content) {
-    public static ArticleComment of(Article article, UserAccount userAccount, String content) {
-        return new ArticleComment(article, userAccount, content);
+    public static Ex08_6_ArticleComment of(Article article, UserAccount userAccount, String content) {
+        return new Ex08_6_ArticleComment(article, userAccount, content);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ArticleComment that = (ArticleComment) o;
+        Ex08_6_ArticleComment that = (Ex08_6_ArticleComment) o;
         return Objects.equals(id, that.id);
     }
 
